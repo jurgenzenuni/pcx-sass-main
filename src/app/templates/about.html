@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block head_title %}About Us{% endblock head_title %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+
+            <h1 class="text-center mb-4">About Us</h1>
+
+            <!-- Mission Statement Section -->
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title text-primary">Our Mission</h3>
+                    <p class="card-text">
+                        We are dedicated to providing exceptional service and innovative solutions
+                        to meet our clients' needs. Our commitment to excellence drives everything we do.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Values Section -->
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Innovation</h4>
+                            <p class="card-text">Pushing boundaries and embracing new ideas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Integrity</h4>
+                            <p class="card-text">Honest and ethical in all our dealings</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Excellence</h4>
+                            <p class="card-text">Striving for the highest quality in everything</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title text-primary mb-4">Our Team</h3>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"
+                                        style="width: 60px; height: 60px;">
+                                        JD
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-0">John Doe</h5>
+                                    <p class="text-muted mb-0">Founder & CEO</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"
+                                        style="width: 60px; height: 60px;">
+                                        JS
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-0">Jane Smith</h5>
+                                    <p class="text-muted mb-0">Creative Director</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

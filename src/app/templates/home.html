@@ -1,0 +1,267 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block head_title %}
+PCX - Home
+{% endblock head_title %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">Find Your Dream Gaming PC</h1>
+                    <p class="lead mb-4">From budget builds to high-end gaming rigs, we've got the perfect PC for every
+                        gamer.</p>
+                    <button class="btn btn-light btn-lg me-3">Shop Now</button>
+                    <a href="{% url 'about' %}" class="btn btn-outline-light btn-lg">About Us</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PC Products Section -->
+<section class="container py-5">
+    <h2 class="text-center mb-5">Featured Gaming PCs</h2>
+    <div class="row g-4">
+        <!-- Gaming PC 1 -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500"
+                    class="card-img-top" alt="Gaming PC">
+                <div class="card-body">
+                    <h5 class="card-title">Pro Gaming Beast</h5>
+                    <div class="specs-list mb-3">
+                        <p class="mb-1"><strong>CPU:</strong> Intel i9-13900K</p>
+                        <p class="mb-1"><strong>GPU:</strong> RTX 4090 24GB</p>
+                        <p class="mb-1"><strong>RAM:</strong> 32GB DDR5</p>
+                        <p class="mb-1"><strong>Storage:</strong> 2TB NVMe SSD</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="text-primary mb-0">$2,999</h4>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gaming PC 2 -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1629102981237-c44ffad32775?q=80&w=1365&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="card-img-top" alt="Gaming PC">
+                <div class="card-body">
+                    <h5 class="card-title">Mid-Range Warrior</h5>
+                    <div class="specs-list mb-3">
+                        <p class="mb-1"><strong>CPU:</strong> AMD Ryzen 7 7800X</p>
+                        <p class="mb-1"><strong>GPU:</strong> RTX 4070 12GB</p>
+                        <p class="mb-1"><strong>RAM:</strong> 16GB DDR5</p>
+                        <p class="mb-1"><strong>Storage:</strong> 1TB NVMe SSD</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="text-primary mb-0">$1,699</h4>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gaming PC 3 -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500"
+                    class="card-img-top" alt="Gaming PC">
+                <div class="card-body">
+                    <h5 class="card-title">Budget Champion</h5>
+                    <div class="specs-list mb-3">
+                        <p class="mb-1"><strong>CPU:</strong> Intel i5-13600K</p>
+                        <p class="mb-1"><strong>GPU:</strong> RTX 4060 Ti 8GB</p>
+                        <p class="mb-1"><strong>RAM:</strong> 16GB DDR4</p>
+                        <p class="mb-1"><strong>Storage:</strong> 500GB NVMe SSD</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="text-primary mb-0">$999</h4>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gaming PC 4 -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?q=80&w=1469&auto=format&fit=crop"
+                    class="card-img-top" alt="Gaming PC">
+                <div class="card-body">
+                    <h5 class="card-title">Creator Pro</h5>
+                    <div class="specs-list mb-3">
+                        <p class="mb-1"><strong>CPU:</strong> AMD Ryzen 9 7950X</p>
+                        <p class="mb-1"><strong>GPU:</strong> RTX 4080 16GB</p>
+                        <p class="mb-1"><strong>RAM:</strong> 64GB DDR5</p>
+                        <p class="mb-1"><strong>Storage:</strong> 4TB NVMe SSD</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="text-primary mb-0">$2,499</h4>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gaming PC 5 -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1625842268584-8f3296236761?q=80&w=1470&auto=format&fit=crop"
+                    class="card-img-top" alt="Gaming PC">
+                <div class="card-body">
+                    <h5 class="card-title">Compact Powerhouse</h5>
+                    <div class="specs-list mb-3">
+                        <p class="mb-1"><strong>CPU:</strong> Intel i7-13700K</p>
+                        <p class="mb-1"><strong>GPU:</strong> RTX 4070 Super</p>
+                        <p class="mb-1"><strong>RAM:</strong> 32GB DDR5</p>
+                        <p class="mb-1"><strong>Storage:</strong> 2TB NVMe SSD</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="text-primary mb-0">$1,899</h4>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gaming PC 6 -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1587302912306-cf1ed9c33146?q=80&w=1280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="card-img-top" alt="Gaming PC">
+                <div class="card-body">
+                    <h5 class="card-title">Entry Level Pro</h5>
+                    <div class="specs-list mb-3">
+                        <p class="mb-1"><strong>CPU:</strong> Intel i3-13100F</p>
+                        <p class="mb-1"><strong>GPU:</strong> RTX 4060 8GB</p>
+                        <p class="mb-1"><strong>RAM:</strong> 16GB DDR4</p>
+                        <p class="mb-1"><strong>Storage:</strong> 1TB NVMe SSD</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="text-primary mb-0">$799</h4>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Features</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-4">
+                            <svg class="text-primary" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+                            </svg>
+                        </div>
+                        <h5 class="card-title">Easy Integration</h5>
+                        <p class="card-text">Seamlessly integrate with your existing systems and workflows.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-4">
+                            <svg class="text-primary" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                            </svg>
+                        </div>
+                        <h5 class="card-title">Advanced Security</h5>
+                        <p class="card-text">State-of-the-art security features to protect your data.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-4">
+                            <svg class="text-primary" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+                                <path
+                                    d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
+                            </svg>
+                        </div>
+                        <h5 class="card-title">24/7 Support</h5>
+                        <p class="card-text">Round-the-clock support to help you whenever you need it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Coming Soon Section -->
+<section class="coming-soon-section py-5">
+    <div class="container">
+        <div class="coming-soon-content">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-4 fw-bold mb-4">NVIDIA RTX 50 Series</h2>
+                    <p class="lead mb-4">The next generation of gaming performance is coming to our builds. Experience
+                        unprecedented power and ray-tracing capabilities.</p>
+                    <button class="btn btn-outline-light btn-lg">Notify Me</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5>About Us</h5>
+                <p>We are dedicated to providing the best modern web solutions for your needs.</p>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Home</a></li>
+                    <li><a href="#" class="text-white">Features</a></li>
+                    <li><a href="#" class="text-white">Pricing</a></li>
+                    <li><a href="#" class="text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h5>Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li>Email: info@example.com</li>
+                    <li>Phone: (123) 456-7890</li>
+                    <li>Address: 123 Main St, City, Country</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="mt-4 mb-4 border-light">
+        <div class="text-center">
+            <p class="mb-0">&copy; 2024 ModernApp. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+{% endblock content %}

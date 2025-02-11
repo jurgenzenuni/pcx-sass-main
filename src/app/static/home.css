@@ -1,0 +1,90 @@
+.hero-section {
+    background: url('https://images.unsplash.com/photo-1626218174358-7769486c4b79?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    padding: 300px 0;
+    color: white;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 10%, rgba(104, 97, 240, 0.30) 80%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card {
+    border: none;
+    transition: transform 0.3s ease;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    background-color: #1F2937;
+    color: white;
+    padding: 60px 0;
+}
+
+.card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.specs-list p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.coming-soon-section {
+    background: url('https://images.unsplash.com/photo-1727176763565-1d983341bb95?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    height: 800px;
+    color: white;
+    margin: 50px 0;
+    display: flex;
+    align-items: center;
+}
+
+.coming-soon-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.coming-soon-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+/* Rest of your custom styles... */ 
