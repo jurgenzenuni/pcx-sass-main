@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from decouple import config  # You already have python-decouple in requirements.txt
 
@@ -79,6 +80,19 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+CONN_MAX_AGE = config('CONN_MAX_AGE', default=30, cast=int)
+DATABASE_URL = config('DATABASE_URL', default= None)
+
+if DATABASE_URL is not None:
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=DATABASE_URL,
+            conn_max_age=CONN_MAX_AGE,
+            conn_health_checks=True,
+        )
+    }
 
 
 # Password validation
