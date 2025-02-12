@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Contact Form Section -->
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">Contact Us</h3>
+                    <form method="POST" action="{% url 'submit_contact' %}">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add this right after the contact form -->
+<div class="container">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+
+<!-- Add this where you want to display the contacts -->
+<div class="container mt-4">
+    <h3>Recent Contacts</h3>
+    {% for contact in contacts %}
+    <div class="card mb-2">
+        <div class="card-body">
+            <h5>{{ contact.name }}</h5>
+            <p>{{ contact.email }}</p>
+            <p>{{ contact.message }}</p>
+            <small>{{ contact.created_at }}</small>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}  
