@@ -1,0 +1,16 @@
+<div class="container mt-4">
+    {% if user.is_authenticated %}
+    <div class="d-flex justify-content-between align-items-center">
+        <h4 class="mb-0">Welcome, {{ user.username }}!</h4>
+        <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-danger">Logout</button>
+        </form>
+    </div>
+    {% else %}
+    <div class="d-flex justify-content-end">
+        <a href="{% url 'login' %}" class="btn btn-outline-primary me-2">Login</a>
+        <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+    </div>
+    {% endif %}
+</div>
