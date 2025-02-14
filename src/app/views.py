@@ -1,5 +1,4 @@
 import os
-import logging
 from django.shortcuts import render, redirect
 from .models import Contact
 from django.contrib import messages
@@ -7,10 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 
-logger = logging.getLogger(__name__)
-
 def home(request):
-    logger.info(f"User accessing home: {request.user}")
     return render(request, 'home.html')
 
 def about(request):
