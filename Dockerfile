@@ -40,12 +40,11 @@ COPY requirements.txt /tmp/requirements.txt
 # Install the Python project requirements
 RUN pip install -r /tmp/requirements.txt
 
+# Create static directories first
+RUN mkdir -p /code/staticfiles
+
 # copy the project code into the container's working directory
 COPY ./src /code
-
-# Create static directories
-RUN mkdir -p /code/staticfiles
-RUN mkdir -p /code/app/static/images
 
 # Make sure static files directory exists and has correct permissions
 RUN chmod -R 755 /code/app/static
