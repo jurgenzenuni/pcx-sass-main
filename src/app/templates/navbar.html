@@ -1,7 +1,10 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}">PCX</a>
+        <a class="navbar-brand" href="{% url 'home' %}">
+            {% load static %}
+            <img src="{% static 'images/logo-color.png' %}" alt="PCX Logo" height="55">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,19 +30,19 @@
             </ul>
 
             <!-- Auth Section -->
-            <div class="navbar-nav">
+            <div class="navbar-nav auth-buttons">
                 {% if user.is_authenticated %}
                 <span class="nav-item navbar-text me-3">
                     Welcome, {{ user.username }}!
                 </span>
                 <form class="nav-item" method="POST" action="{% url 'logout' %}">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-outline-danger">Logout</button>
+                    <button type="submit" class="btn btn-outline-auth">Logout</button>
                 </form>
                 {% else %}
-                <button class="btn btn-outline-primary me-2" data-bs-toggle="modal"
+                <button class="btn btn-outline-auth me-2" data-bs-toggle="modal"
                     data-bs-target="#loginModal">Login</button>
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+                <button class="btn btn-auth" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
                 {% endif %}
             </div>
         </div>

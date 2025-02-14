@@ -1,0 +1,30 @@
+/* Global navbar styles */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.navbar-brand img {
+    max-height: 55px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Global modal styles */
+.modal-backdrop.show {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+body {
+    overflow-y: scroll !important;
+} 

@@ -1,19 +1,87 @@
 .hero-section {
-    background: url('https://images.unsplash.com/photo-1626218174358-7769486c4b79?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
-    background-size: cover;
     position: relative;
-    padding: 300px 0;
-    color: white;
+    height: 65vh;
+    min-height: 400px;
+    background: none;
+    padding: 0;
 }
 
-.hero-section::before {
-    content: '';
+.carousel, .carousel-inner, .carousel-item {
+    height: 100%;
+}
+
+.carousel-item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Set different background images for each slide */
+.carousel-item:nth-child(1) {
+    background-image: url('https://images.unsplash.com/photo-1616440537338-1d04df3987f7?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.carousel-item:nth-child(2) {
+    background-image: url('https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.carousel-item:nth-child(3) {
+    background-image: url('https://images.unsplash.com/photo-1581351123004-757df051db8e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.carousel-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 10%, rgba(104, 97, 240, 0.30) 80%);
+    pointer-events: none;
+}
+
+/* Ensure content is clickable */
+.carousel-item .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Style for the logo in the first slide */
+.hero-logo {
+    max-height: 250px;
+    width: auto;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+    animation: float 3s ease-in-out infinite;
+    border-radius: 20px;
+}
+
+/* Floating animation for the logo */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Carousel controls styling */
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+    opacity: 0.7;
+}
+
+.carousel-indicators {
+    bottom: 40px;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 8px;
 }
 
 .hero-content {
@@ -30,10 +98,6 @@
 
 .feature-card:hover {
     transform: translateY(-5px);
-}
-
-.navbar {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .footer {

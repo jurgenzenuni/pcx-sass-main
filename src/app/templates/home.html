@@ -12,21 +12,76 @@ PCX - Home
 
 {% block content %}
 
-<!-- Hero Section -->
+<!-- Replace the Hero Section with this Carousel -->
 <section class="hero-section">
-    <div class="container">
-        <div class="hero-content">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="display-4 fw-bold mb-4">Find Your Dream Gaming PC</h1>
-                    <p class="lead mb-4">From budget builds to high-end gaming rigs, we've got the perfect PC for every
-                        gamer.</p>
-                    <button class="btn btn-light btn-lg me-3">Shop Now</button>
-                    <a href="{% url 'about' %}" class="btn btn-outline-light btn-lg">About Us</a>
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Carousel indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <!-- First Slide - Split Content -->
+            <div class="carousel-item active">
+                <div class="carousel-overlay"></div>
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-lg-6 text-white">
+                            <h1 class="display-4 fw-bold mb-4">Find Your Dream Gaming PC</h1>
+                            <p class="lead mb-4">From budget builds to high-end gaming rigs, we've got the perfect PC
+                                for every gamer.</p>
+                            <button class="btn btn-light btn-lg me-3">Shop Now</button>
+                            <a href="{% url 'about' %}" class="btn btn-outline-light btn-lg">About Us</a>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-center">
+                            <img src="{% static 'images/logo-color.png' %}" alt="PCX Logo" class="hero-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Slide -->
+            <div class="carousel-item">
+                <div class="carousel-overlay"></div>
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-lg-8 mx-auto text-center text-white">
+                            <h1 class="display-4 fw-bold mb-4">Custom Built PCs</h1>
+                            <p class="lead mb-4">Tailored to your needs, built by experts, powered by the latest
+                                technology.</p>
+                            <button class="btn btn-light btn-lg">Configure Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third Slide -->
+            <div class="carousel-item">
+                <div class="carousel-overlay"></div>
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-lg-8 mx-auto text-center text-white">
+                            <h1 class="display-4 fw-bold mb-4">Professional Support</h1>
+                            <p class="lead mb-4">24/7 expert support and maintenance for your gaming setup.</p>
+                            <button class="btn btn-light btn-lg">Contact Support</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <!-- Carousel controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 </section>
 
