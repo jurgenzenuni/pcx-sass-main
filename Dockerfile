@@ -43,7 +43,14 @@ COPY ./src /code
 # Install the Python project requirements
 RUN pip install -r /tmp/requirements.txt
 
-# Collect static files before the application starts
+# Create static directories first
+RUN mkdir -p /code/staticfiles
+RUN mkdir -p /code/app/static/images
+
+# Make sure static files directory exists and has correct permissions
+RUN chmod -R 755 /code/app/static
+
+# Collect static files
 RUN python manage.py collectstatic --noinput
 
 # database isn't available during build
