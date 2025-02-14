@@ -37,19 +37,13 @@ WORKDIR /code
 # Copy the requirements file into the container
 COPY requirements.txt /tmp/requirements.txt
 
-# Install the Python project requirements
-RUN pip install -r /tmp/requirements.txt
-
-# Create static directories first
-RUN mkdir -p /code/staticfiles
-
 # copy the project code into the container's working directory
 COPY ./src /code
 
-# Make sure static files directory exists and has correct permissions
-RUN chmod -R 755 /code/app/static
+# Install the Python project requirements
+RUN pip install -r /tmp/requirements.txt
 
-# Collect static files
+# Collect static files before the application starts
 RUN python manage.py collectstatic --noinput
 
 # database isn't available during build
