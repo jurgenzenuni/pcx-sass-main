@@ -150,12 +150,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / 'app' / 'static',
-]
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Make sure this exists
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # Or wherever you want collected files to go
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'app/static'),
+]
 
 # After STATIC_ROOT setting
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
