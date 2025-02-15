@@ -92,19 +92,24 @@ PCX - Home
         <!-- Gaming PC 1 -->
         <div class="col-md-4">
             <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500"
-                    class="card-img-top" alt="Gaming PC">
+                <img src="{% static 'images/x18.png' %}" class="card-img-top" alt="Gaming PC x18">
                 <div class="card-body">
-                    <h5 class="card-title">Pro Gaming Beast</h5>
+                    <h5 class="card-title">PCX18 </h5>
                     <div class="specs-list mb-3">
-                        <p class="mb-1"><strong>CPU:</strong> Intel i9-13900K</p>
-                        <p class="mb-1"><strong>GPU:</strong> RTX 4090 24GB</p>
-                        <p class="mb-1"><strong>RAM:</strong> 32GB DDR5</p>
-                        <p class="mb-1"><strong>Storage:</strong> 2TB NVMe SSD</p>
+                        <p class="mb-1"><strong>CPU:</strong> Ryzen 7 5800x</p>
+                        <p class="mb-1"><strong>GPU:</strong> 3060Ti 8GB</p>
+                        <p class="mb-1"><strong>RAM:</strong> 32GB DDR4</p>
+                        <p class="mb-1"><strong>Storage:</strong> 1TB NVMe SSD</p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
-                        <h4 class="text-primary mb-0">$2,999</h4>
-                        <button class="btn btn-primary">Add to Cart</button>
+                        <h4 class="text-primary mb-0">$1,050</h4>
+                        {% if user.is_authenticated %}
+                        <button class="btn btn-primary add-to-cart" data-product-name="PCX18">Add to
+                            Cart</button>
+                        {% else %}
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Add to
+                            Cart</button>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -113,19 +118,24 @@ PCX - Home
         <!-- Gaming PC 2 -->
         <div class="col-md-4">
             <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1629102981237-c44ffad32775?q=80&w=1365&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    class="card-img-top" alt="Gaming PC">
+                <img src="{% static 'images/x11.jpg' %}" class="card-img-top" alt="Gaming PC x11">
                 <div class="card-body">
-                    <h5 class="card-title">Mid-Range Warrior</h5>
+                    <h5 class="card-title"> PCX11</h5>
                     <div class="specs-list mb-3">
-                        <p class="mb-1"><strong>CPU:</strong> AMD Ryzen 7 7800X</p>
-                        <p class="mb-1"><strong>GPU:</strong> RTX 4070 12GB</p>
-                        <p class="mb-1"><strong>RAM:</strong> 16GB DDR5</p>
+                        <p class="mb-1"><strong>CPU:</strong> AMD Ryzen 7 7800X3D</p>
+                        <p class="mb-1"><strong>GPU:</strong> AMD 7900 GRE 16GB</p>
+                        <p class="mb-1"><strong>RAM:</strong> 32GB DDR5</p>
                         <p class="mb-1"><strong>Storage:</strong> 1TB NVMe SSD</p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
-                        <h4 class="text-primary mb-0">$1,699</h4>
-                        <button class="btn btn-primary">Add to Cart</button>
+                        <h4 class="text-primary mb-0">$2,199</h4>
+                        {% if user.is_authenticated %}
+                        <button class="btn btn-primary add-to-cart" data-product-name="PCX11">Add to
+                            Cart</button>
+                        {% else %}
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Add to
+                            Cart</button>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -134,19 +144,24 @@ PCX - Home
         <!-- Gaming PC 3 -->
         <div class="col-md-4">
             <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500"
-                    class="card-img-top" alt="Gaming PC">
+                <img src="{% static 'images/x8.png' %}" class="card-img-top" alt="Gaming PC x8">
                 <div class="card-body">
-                    <h5 class="card-title">Budget Champion</h5>
+                    <h5 class="card-title">PCX8</h5>
                     <div class="specs-list mb-3">
-                        <p class="mb-1"><strong>CPU:</strong> Intel i5-13600K</p>
-                        <p class="mb-1"><strong>GPU:</strong> RTX 4060 Ti 8GB</p>
-                        <p class="mb-1"><strong>RAM:</strong> 16GB DDR4</p>
-                        <p class="mb-1"><strong>Storage:</strong> 500GB NVMe SSD</p>
+                        <p class="mb-1"><strong>CPU:</strong> Ryzen 7 5700x</p>
+                        <p class="mb-1"><strong>GPU:</strong> RTX 3070 8GB</p>
+                        <p class="mb-1"><strong>RAM:</strong> 32GB DDR4</p>
+                        <p class="mb-1"><strong>Storage:</strong> 1TB NVMe SSD</p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
-                        <h4 class="text-primary mb-0">$999</h4>
-                        <button class="btn btn-primary">Add to Cart</button>
+                        <h4 class="text-primary mb-0">$1,150</h4>
+                        {% if user.is_authenticated %}
+                        <button class="btn btn-primary add-to-cart" data-product-name="PCX8">Add to
+                            Cart</button>
+                        {% else %}
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Add to
+                            Cart</button>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -155,19 +170,24 @@ PCX - Home
         <!-- Gaming PC 4 -->
         <div class="col-md-4">
             <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?q=80&w=1469&auto=format&fit=crop"
-                    class="card-img-top" alt="Gaming PC">
+                <img src="{% static 'images/x16.png' %}" class="card-img-top" alt="Gaming PC x16">
                 <div class="card-body">
-                    <h5 class="card-title">Creator Pro</h5>
+                    <h5 class="card-title">PCX16</h5>
                     <div class="specs-list mb-3">
-                        <p class="mb-1"><strong>CPU:</strong> AMD Ryzen 9 7950X</p>
-                        <p class="mb-1"><strong>GPU:</strong> RTX 4080 16GB</p>
-                        <p class="mb-1"><strong>RAM:</strong> 64GB DDR5</p>
-                        <p class="mb-1"><strong>Storage:</strong> 4TB NVMe SSD</p>
+                        <p class="mb-1"><strong>CPU:</strong> Ryzen 5 7500f</p>
+                        <p class="mb-1"><strong>GPU:</strong> RTX 3070 8GB</p>
+                        <p class="mb-1"><strong>RAM:</strong> 32GB DDR5</p>
+                        <p class="mb-1"><strong>Storage:</strong> 1TB NVMe SSD</p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
-                        <h4 class="text-primary mb-0">$2,499</h4>
-                        <button class="btn btn-primary">Add to Cart</button>
+                        <h4 class="text-primary mb-0">$1,150</h4>
+                        {% if user.is_authenticated %}
+                        <button class="btn btn-primary add-to-cart" data-product-name="PCX16">Add to
+                            Cart</button>
+                        {% else %}
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Add to
+                            Cart</button>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -176,19 +196,24 @@ PCX - Home
         <!-- Gaming PC 5 -->
         <div class="col-md-4">
             <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1625842268584-8f3296236761?q=80&w=1470&auto=format&fit=crop"
-                    class="card-img-top" alt="Gaming PC">
+                <img src="{% static 'images/x20.jpg' %}" class="card-img-top" alt="Gaming PC X20">
                 <div class="card-body">
-                    <h5 class="card-title">Compact Powerhouse</h5>
+                    <h5 class="card-title">PCX20</h5>
                     <div class="specs-list mb-3">
-                        <p class="mb-1"><strong>CPU:</strong> Intel i7-13700K</p>
-                        <p class="mb-1"><strong>GPU:</strong> RTX 4070 Super</p>
-                        <p class="mb-1"><strong>RAM:</strong> 32GB DDR5</p>
-                        <p class="mb-1"><strong>Storage:</strong> 2TB NVMe SSD</p>
+                        <p class="mb-1"><strong>CPU:</strong> Ryzen 5 5600x</p>
+                        <p class="mb-1"><strong>GPU:</strong> AMD RX 6600 8gb</p>
+                        <p class="mb-1"><strong>RAM:</strong> 16GB DDR4</p>
+                        <p class="mb-1"><strong>Storage:</strong> 1TB NVMe SSD</p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
-                        <h4 class="text-primary mb-0">$1,899</h4>
-                        <button class="btn btn-primary">Add to Cart</button>
+                        <h4 class="text-primary mb-0">$775</h4>
+                        {% if user.is_authenticated %}
+                        <button class="btn btn-primary add-to-cart" data-product-name="PCX20">Add to
+                            Cart</button>
+                        {% else %}
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Add to
+                            Cart</button>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -197,19 +222,23 @@ PCX - Home
         <!-- Gaming PC 6 -->
         <div class="col-md-4">
             <div class="card h-100">
-                <img src="https://images.unsplash.com/photo-1587302912306-cf1ed9c33146?q=80&w=1280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    class="card-img-top" alt="Gaming PC">
+                <img src="{% static 'images/x17.jpg' %}" class="card-img-top" alt="Gaming PC X17">
                 <div class="card-body">
-                    <h5 class="card-title">Entry Level Pro</h5>
+                    <h5 class="card-title">PCX17</h5>
                     <div class="specs-list mb-3">
-                        <p class="mb-1"><strong>CPU:</strong> Intel i3-13100F</p>
-                        <p class="mb-1"><strong>GPU:</strong> RTX 4060 8GB</p>
-                        <p class="mb-1"><strong>RAM:</strong> 16GB DDR4</p>
+                        <p class="mb-1"><strong>CPU:</strong> Ryzen 5 5600</p>
+                        <p class="mb-1"><strong>GPU:</strong> RTX 3060Ti 8GB</p>
+                        <p class="mb-1"><strong>RAM:</strong> 32GB DDR4</p>
                         <p class="mb-1"><strong>Storage:</strong> 1TB NVMe SSD</p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
-                        <h4 class="text-primary mb-0">$799</h4>
-                        <button class="btn btn-primary">Add to Cart</button>
+                        <h4 class="text-primary mb-0">$985</h4>
+                        {% if user.is_authenticated %}
+                        <button class="btn btn-primary add-to-cart" data-product-name="PCX17">Add to Cart</button>
+                        {% else %}
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Add to
+                            Cart</button>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -222,47 +251,53 @@ PCX - Home
     <div class="container">
         <h2 class="text-center mb-5">Our Features</h2>
         <div class="row g-4">
+            <!-- Tested & Working -->
             <div class="col-md-4">
                 <div class="card feature-card h-100">
                     <div class="card-body text-center">
                         <div class="mb-4">
                             <svg class="text-primary" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
                                 <path
-                                    d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                             </svg>
                         </div>
-                        <h5 class="card-title">Easy Integration</h5>
-                        <p class="card-text">Seamlessly integrate with your existing systems and workflows.</p>
+                        <h5 class="card-title">Tested & Working</h5>
+                        <p class="card-text">Every system is thoroughly tested and benchmarked to ensure optimal
+                            performance before delivery.</p>
                     </div>
                 </div>
             </div>
+
+            <!-- Quality Build -->
             <div class="col-md-4">
                 <div class="card feature-card h-100">
                     <div class="card-body text-center">
                         <div class="mb-4">
                             <svg class="text-primary" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
                                 <path
-                                    d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                                    d="M1 0L0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.356 3.356a1 1 0 0 0 1.414 0l1.586-1.586a1 1 0 0 0 0-1.414l-3.356-3.356a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0zm9.646 10.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708zM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11z" />
                             </svg>
                         </div>
-                        <h5 class="card-title">Advanced Security</h5>
-                        <p class="card-text">State-of-the-art security features to protect your data.</p>
+                        <h5 class="card-title">Quality Build</h5>
+                        <p class="card-text">Premium components and meticulous assembly ensure reliability and longevity
+                            for your gaming PC.</p>
                     </div>
                 </div>
             </div>
+
+            <!-- Support -->
             <div class="col-md-4">
                 <div class="card feature-card h-100">
                     <div class="card-body text-center">
                         <div class="mb-4">
                             <svg class="text-primary" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
                                 <path
-                                    d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
-                                <path
-                                    d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
+                                    d="M6 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3A.5.5 0 0 1 6 9zM3.5 2A1.5 1.5 0 0 0 2 3.5v8A1.5 1.5 0 0 0 3.5 13h9a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 12.5 2h-9zm9 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9z" />
                             </svg>
                         </div>
                         <h5 class="card-title">24/7 Support</h5>
-                        <p class="card-text">Round-the-clock support to help you whenever you need it.</p>
+                        <p class="card-text">Dedicated technical support team ready to assist you with any questions or
+                            concerns about your system.</p>
                     </div>
                 </div>
             </div>
