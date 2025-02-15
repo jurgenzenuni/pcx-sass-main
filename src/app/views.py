@@ -1,6 +1,6 @@
 import os
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Contact, SupportThread, ThreadMessage
+from .models import Contact, SupportThread, ThreadMessage, EmailVerificationToken
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
@@ -10,6 +10,10 @@ import json
 from django.db import connection
 from django.db.models import Q
 from django.core.paginator import Paginator
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from django.conf import settings
 
 def home(request):
     return render(request, 'home.html')
@@ -46,7 +50,24 @@ def login_view(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
+        
         if user is not None:
+            # Check if user is verified
+            try:
+                token = EmailVerificationToken.objects.get(user=user)
+                if not token.is_verified:
+                    return JsonResponse({
+                        'success': False,
+                        'message': 'Please verify your email before logging in.'
+                    })
+            except EmailVerificationToken.DoesNotExist:
+                # Create verification token for existing users
+                token = EmailVerificationToken.objects.create(user=user)
+                return JsonResponse({
+                    'success': False,
+                    'message': 'Please verify your email before logging in.'
+                })
+                
             login(request, user)
             return JsonResponse({'success': True})
         else:
@@ -62,23 +83,78 @@ def register_view(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         
+        # Check if request is AJAX (from modal) or regular form submission
+        is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
+        
         if User.objects.filter(username=username).exists():
-            return JsonResponse({
-                'success': False,
-                'message': 'Username already exists'
-            })
-        if User.objects.filter(email=email).exists():
-            return JsonResponse({
-                'success': False,
-                'message': 'Email already exists'
-            })
+            message = 'Username already exists'
+            return JsonResponse({'success': False, 'message': message}) if is_ajax else render(request, 'register.html', {'error': message})
             
-        user = User.objects.create_user(username=username, email=email, password=password)
-        return JsonResponse({
-            'success': True,
-            'message': 'Registration successful! Please login.'
-        })
-    return render(request, 'register.html', {})
+        if User.objects.filter(email=email).exists():
+            message = 'Email already exists'
+            return JsonResponse({'success': False, 'message': message}) if is_ajax else render(request, 'register.html', {'error': message})
+            
+        try:
+            # Create inactive user
+            user = User.objects.create_user(
+                username=username, 
+                email=email, 
+                password=password,
+                is_active=False
+            )
+            
+            # Create verification token and send email
+            verification_token = EmailVerificationToken.objects.create(user=user)
+            verify_url = f"{request.scheme}://{request.get_host()}/verify-email/{verification_token.token}"
+            
+            html_message = render_to_string('email/verify_email.html', {
+                'user': user,
+                'verify_url': verify_url
+            })
+            plain_message = strip_tags(html_message)
+            
+            send_mail(
+                'Verify your email address',
+                plain_message,
+                settings.EMAIL_HOST_USER,
+                [email],
+                html_message=html_message,
+                fail_silently=False,
+            )
+            
+            success_message = 'Registration successful! Please check your email to verify your account.'
+            if is_ajax:
+                return JsonResponse({'success': True, 'message': success_message})
+            else:
+                messages.success(request, success_message)
+                return render(request, 'register.html', {'verification_sent': True, 'email': email})
+                
+        except Exception as e:
+            user.delete() if 'user' in locals() else None
+            error_message = 'Failed to send verification email. Please try again.'
+            return JsonResponse({'success': False, 'message': error_message}) if is_ajax else render(request, 'register.html', {'error': error_message})
+            
+    return render(request, 'register.html')
+
+def verify_email(request, token):
+    try:
+        verification = EmailVerificationToken.objects.get(token=token, is_verified=False)
+        user = verification.user
+        
+        # Verify user
+        user.is_active = True
+        user.save()
+        
+        # Mark token as verified
+        verification.is_verified = True
+        verification.save()
+        
+        messages.success(request, 'Email verified successfully! You can now login.')
+        return redirect('login')
+        
+    except EmailVerificationToken.DoesNotExist:
+        messages.error(request, 'Invalid or expired verification link.')
+        return redirect('register')
 
 def logout_view(request):
     logout(request)

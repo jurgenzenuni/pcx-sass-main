@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
+import uuid
+from datetime import timedelta
+from django.utils import timezone
 
 # Create your models here.
 
@@ -34,6 +37,21 @@ class ThreadMessage(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     is_admin_reply = models.BooleanField(default=False)
+
+class EmailVerificationToken(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    token = models.UUIDField(default=uuid.uuid4, editable=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_verified = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.user.email} - {'Verified' if self.is_verified else 'Not Verified'}"
+
+    @classmethod
+    def cleanup_expired(cls):
+        # Delete tokens older than 24 hours
+        expiry_time = timezone.now() - timedelta(hours=24)
+        cls.objects.filter(created_at__lt=expiry_time, is_verified=False).delete()
 
 # class Product(models.Model):
 #     id = models.AutoField(primary_key=True)

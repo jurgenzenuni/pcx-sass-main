@@ -27,4 +27,28 @@
 
 body {
     overflow-y: scroll !important;
+}
+
+.toast-container {
+    z-index: 1056 !important;  /* Above modal backdrop */
+    margin-top: 1rem;  /* Add some space from the top */
+}
+
+.toast {
+    min-width: 300px;
+    margin: 0 auto;  /* Center horizontally */
+    text-align: center;  /* Center the text */
+}
+
+.bg-success {
+    background-color: #6c63ff !important;  /* Your theme color */
+}
+
+.toast-header {
+    background-color: rgba(255, 255, 255, 0.85);
+    justify-content: center;  /* Center the header content */
+}
+
+.toast-body {
+    padding: 1rem 1.5rem;  /* Add more padding */
 } 

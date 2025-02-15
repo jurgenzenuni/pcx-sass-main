@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import home, about, submit_contact, contact, login_view, register_view, logout_view, add_to_cart, get_cart, update_cart, support, thread_detail, create_thread, change_thread_status
+from .views import home, about, submit_contact, contact, login_view, register_view, logout_view, add_to_cart, get_cart, update_cart, support, thread_detail, create_thread, change_thread_status, verify_email
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -18,4 +18,5 @@ urlpatterns = [
     path('support/thread/<int:thread_id>/', thread_detail, name='thread_detail'),
     path('support/create/', create_thread, name='create_thread'),
     path('support/thread/<int:thread_id>/status/<str:new_status>/', change_thread_status, name='change_thread_status'),
+    path('verify-email/<uuid:token>/', verify_email, name='verify_email'),
 ]

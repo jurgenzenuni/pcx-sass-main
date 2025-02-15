@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block head_title %}Verify Your Email{% endblock head_title %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-6 mx-auto text-center">
+            <div class="card shadow">
+                <div class="card-body p-5">
+                    <i class="fas fa-envelope-open-text fa-4x text-primary mb-4"></i>
+                    <h2 class="mb-4">Check Your Email</h2>
+                    <p class="lead mb-4">A verification link has been sent to <strong>{{ email }}</strong></p>
+                    <hr>
+                    <div class="mb-4">
+                        <p>Please check your email and click the verification link to activate your account.</p>
+                        <p class="text-muted small">If you don't see the email, check your spam folder.</p>
+                    </div>
+                    <a href="{% url 'home' %}" class="btn btn-auth">Return to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
